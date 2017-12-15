@@ -113,11 +113,8 @@ var objectSize = function(obj){
  * @return {Zero}
  */
 var createZeroFilledArray = function(n){
-  var arr = [];
-  for (var i = 0; i < n; i++){
-  arr[i] = 0;
-  } 
-  return arr; 
+  var arr = new Array(n);
+  return arr.fill(0); 
 };
 
 /* #poppedArray
@@ -127,7 +124,9 @@ var createZeroFilledArray = function(n){
  * @param {Array}
  * @return {Array}
  */
-var poppedArray;
+var poppedArray = function(arr){
+  
+};
 
 /* #splitString
  *
