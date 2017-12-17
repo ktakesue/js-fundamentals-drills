@@ -125,7 +125,7 @@ var createZeroFilledArray = function(n){
  * @return {Array}
  */
 var poppedArray = function(arr){
-  
+  return arr.slice(0, -1);
 };
 
 /* #splitString
@@ -135,7 +135,9 @@ var poppedArray = function(arr){
  * @param {String}
  * @return {Array}
  */
-var splitString;
+var splitString = function(str){
+  return str.split("");
+};
 
 /* #lengthOfLast
  *
@@ -144,7 +146,9 @@ var splitString;
  * @param {String}
  * @return {Number}
  */
-var lengthOfLast;
+var lengthOfLast = function(str){
+  return str[str.length -1].length;
+};
 
 /* #sumBelowTen
  *
@@ -153,16 +157,43 @@ var lengthOfLast;
  * @param {Array}
  * @return {Number}
  */
-var sumBelowTen;
+
+var sumBelowTen = function(arr){
+  var result = 0;
+    for (var i = 0; i < arr.length; i++){
+      if (arr[i] < 10){
+        result = result + arr[i];
+      }
+    }
+    return result;
+};
+
+//    result = result + arr[i];
+//i=0 result = 0      + 1; result = 1;
+//i=1 result = 1      + 2; result = 3;
+//i=2 result = 3      + 5; result = 8;
+//i=3 result = 8      + 9; result = 17;
+//i=4 DONT RUN LOOP
 
 /* #moreThanTenLetters
  *
  * Takes in an array of strings and returns the amount of elements that have more than ten letters.
  *
- * @param {String}
+ * @param {Array}
  * @return {Number}
  */
-var moreThanTenLetters;
+// var words = ["ah", "ajdoj", "ahsdhihuihdia", "ajdjaodjoijoqijodj"];
+ 
+var moreThanTenLetters = function(arr){
+  var result = 0;
+    for (var i = 0; i < arr.length; i++){
+      if (arr[i].length > 10){
+         result += 1;
+      }
+    }
+    return result;
+};
+  // console.log(moreThanTenLetters(words));
 
 /* #multiplyAll
  *
@@ -171,7 +202,15 @@ var moreThanTenLetters;
  * @param {Array}
  * @return {Number}
  */
-var multiplyAll;
+// var mul = [1, 2, 3];
+ var multiplyAll = function(arr){
+  var result = 1;
+    for (var i = 0; i < arr.length; i++){
+      result *= arr[i];
+    }
+    return result;
+};
+// console.log(multiplyAll(mul));
 
 /* #getKeys
  *
@@ -180,16 +219,26 @@ var multiplyAll;
  * @param {Object}
  * @return {Array}
  */
-var getKeys;
+var getKeys = function(obj){
+  return Object.keys(obj);
+}
 
 /* #sumAllPositive
  *
  * Takes in an array of numbers and returns the sum of all non-negative numbers.
  *
- * @param {String}
+ * @param {Array}
  * @return {Number}
  */
-var sumAllPositive;
+var sumAllPositive = function(arr){
+  var result = 0;
+      for (var i = 0; i < arr.length; i++){
+        if (arr[i] > 0){
+          result += arr[i];
+        }
+      }  
+  return result;
+};
 
 /* #stringCountBelowThree
  *
@@ -198,8 +247,17 @@ var sumAllPositive;
  * @param {Array}
  * @return {Number}
  */
-var stringCountBelowThree;
-
+// var stuff = ["hot", "dog", "peanuts",]
+var stringCountBelowThree = function(arr){
+  var result = 0;
+    for (var i = 0; i < arr.length; i++){
+      if (arr[i].length <= 3){
+        result += 1;
+      }
+    }
+    return result;
+}
+// console.log(stringCountBelowThree(stuff));
 /* #countObjects
  *
  * Takes in an array of objects and returns the amount of objects in the array.
@@ -207,7 +265,13 @@ var stringCountBelowThree;
  * @param {Array}
  * @return {Number}
  */
-var countObjects;
+var countObjects = function(arr){
+  var result = 0;
+  for (var i = 0; i < arr.length; i++){
+   result += 1;
+  }
+  return result;
+}
 
 /* #getObjectKeys
  *
@@ -216,7 +280,9 @@ var countObjects;
  * @param {Object}
  * @return {Array}
  */
-var getObjectKeys;
+var getObjectKeys = function(obj){
+  return Object.keys(obj);
+};
 
 /* #getObjectValues
  *
@@ -225,7 +291,9 @@ var getObjectKeys;
  * @param {Object}
  * @return {Array}
  */
-var getObjectValues;
+var getObjectValues = function(obj){
+  return Object.values(obj);
+};
 
 /* #makeObject
  *
@@ -235,7 +303,16 @@ var getObjectValues;
  * @param {String}
  * @return {Object}
  */
-var makeObject;
+var makeObject = function(key, value){
+  var object = {};
+  object[key] = value;
+  return object;
+};
+
+
+// ["a", 1] input
+// var object = {"a": 1} output
+// object["a"] = 1;
 
 /* #makeObjectReverse
  *
@@ -245,7 +322,11 @@ var makeObject;
  * @param {String}
  * @return {Bool}
  */
-var makeObjectReverse;
+var makeObjectReverse = function(key, value){
+  var object = {};
+  object[value] = key;
+  return object;
+};
 
 /* #tupleToObject
  *
@@ -254,7 +335,9 @@ var makeObjectReverse;
  * @param {Array}
  * @return {Object}
  */
-var tupleToObject;
+var tupleToObject = function(arr){
+  
+};
 
 /* #tupleToObjectReverse
  *
@@ -370,7 +453,14 @@ var arrayToObjectNums;
  * @param {String}
  * @return {Object}
  */
-var stringToKeys;
+var stringToKeys = function(str){
+  var result = [];
+  var splitted = str.split("");
+  for (var i = 0; i < splitted.length; i++);{
+    result[splitted[i]] = true;
+  }
+  return result;
+};
 
 /* #charCountMap
  *
