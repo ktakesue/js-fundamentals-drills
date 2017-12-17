@@ -221,7 +221,7 @@ var moreThanTenLetters = function(arr){
  */
 var getKeys = function(obj){
   return Object.keys(obj);
-}
+};
 
 /* #sumAllPositive
  *
@@ -256,7 +256,7 @@ var stringCountBelowThree = function(arr){
       }
     }
     return result;
-}
+};
 // console.log(stringCountBelowThree(stuff));
 /* #countObjects
  *
@@ -271,7 +271,7 @@ var countObjects = function(arr){
    result += 1;
   }
   return result;
-}
+};
 
 /* #getObjectKeys
  *
@@ -304,11 +304,10 @@ var getObjectValues = function(obj){
  * @return {Object}
  */
 var makeObject = function(key, value){
-  var object = {};
-  object[key] = value;
-  return object;
+  var obj = {};
+  obj[key] = value;
+  return obj;
 };
-
 
 // ["a", 1] input
 // var object = {"a": 1} output
@@ -323,9 +322,9 @@ var makeObject = function(key, value){
  * @return {Bool}
  */
 var makeObjectReverse = function(key, value){
-  var object = {};
-  object[value] = key;
-  return object;
+  var obj = {};
+  obj[value] = key;
+  return obj;
 };
 
 /* #tupleToObject
@@ -336,7 +335,9 @@ var makeObjectReverse = function(key, value){
  * @return {Object}
  */
 var tupleToObject = function(arr){
-  
+  var obj = {};
+  obj[arr[0]] = arr[1];
+  return obj;
 };
 
 /* #tupleToObjectReverse
@@ -346,7 +347,11 @@ var tupleToObject = function(arr){
  * @param {Array}
  * @return {Object}
  */
-var tupleToObjectReverse;
+var tupleToObjectReverse = function(arr){
+  var obj = {};
+  obj[arr[1]] = arr[0];
+  return obj; 
+};
 
 /* #strToKeys
  *
@@ -355,7 +360,13 @@ var tupleToObjectReverse;
  * @param {Array}
  * @return {Object}
  */
-var strToKeys;
+var strToKeys = function(arr){
+  var obj = {};
+  for (var i = 0; i < arr.length; i++){
+    obj[arr[i]] = 0;
+  }
+  return obj;
+};
 
 /* #getValues
  *
@@ -364,7 +375,9 @@ var strToKeys;
  * @param {Object}
  * @return {Array}
  */
-var getValues;
+var getValues = function(obj){
+  return Object.values(obj);
+};
 
 /* #getKeys
  *
@@ -373,7 +386,9 @@ var getValues;
  * @param {Object}
  * @return {Array}
  */
-var getKeys;
+var getKeys = function(obj){
+  return Object.keys(obj);
+};
 
 /* #objectToArray
  *
@@ -454,9 +469,9 @@ var arrayToObjectNums;
  * @return {Object}
  */
 var stringToKeys = function(str){
-  var result = [];
+  var result = {};
   var splitted = str.split("");
-  for (var i = 0; i < splitted.length; i++);{
+  for (var i = 0; i < splitted.length; i++){
     result[splitted[i]] = true;
   }
   return result;
@@ -533,4 +548,4 @@ module.exports = {
   charCountMap: charCountMap,
   frequencyMap: frequencyMap,
   tupleConvertToObject: tupleConvertToObject,
-}
+};
