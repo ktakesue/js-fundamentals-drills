@@ -101,7 +101,7 @@ var convertToArray = function(obj){
  * @param {Object}
  * @return {Number}
  */
-var objectSize = function(obj){
+ var objectSize = function(obj){
   return Object.entries(obj).length;
 };
 
@@ -112,10 +112,13 @@ var objectSize = function(obj){
  * @param {Number}
  * @return {Zero}
  */
+
+//var n = 2;
 var createZeroFilledArray = function(n){
   var arr = new Array(n);
   return arr.fill(0); 
 };
+//console.log(createZeroFilledArray(n));
 
 /* #poppedArray
  *
@@ -125,7 +128,8 @@ var createZeroFilledArray = function(n){
  * @return {Array}
  */
 var poppedArray = function(arr){
-  return arr.slice(0, -1);
+  arr.pop();
+  return arr;
 };
 
 /* #splitString
@@ -183,7 +187,6 @@ var sumBelowTen = function(arr){
  * @return {Number}
  */
 // var words = ["ah", "ajdoj", "ahsdhihuihdia", "ajdjaodjoijoqijodj"];
- 
 var moreThanTenLetters = function(arr){
   var result = 0;
     for (var i = 0; i < arr.length; i++){
@@ -258,6 +261,7 @@ var stringCountBelowThree = function(arr){
     return result;
 };
 // console.log(stringCountBelowThree(stuff));
+
 /* #countObjects
  *
  * Takes in an array of objects and returns the amount of objects in the array.
@@ -308,7 +312,6 @@ var makeObject = function(key, value){
   obj[key] = value;
   return obj;
 };
-
 // ["a", 1] input
 // var object = {"a": 1} output
 // object["a"] = 1;
@@ -398,7 +401,9 @@ var getKeys = function(obj){
  * @param {Object}
  * @return {Array}
  */
-var objectToArray;
+var objectToArray = function(obj){
+  return Object.entries(obj);
+};
 
 /* #arrayToObject
  *
@@ -408,7 +413,16 @@ var objectToArray;
  * @param {Array}
  * @return {Object}
  */
-var arrayToObject;
+var arrayToObject = function(arr){
+  var obj = {};
+  // var obj = {a : b};
+  // var a = arr[i];
+  // var b = false; 
+    for (var i = 0; i < arr.length; i++){
+      obj[arr[i]] = false;
+    }
+    return obj;
+};
 
 /* #arraysToObject
  *
@@ -419,7 +433,16 @@ var arrayToObject;
  * @param {Array}
  * @return {Object}
  */
-var arraysToObject;
+var arraysToObject = function(arr1, arr2){
+  var obj = {};
+  // var obj = {a : b};
+  // var a = arr1[i];
+  // var b = arr2[i];
+    for (var i = 0; i < arr1.length; i++){
+     obj[arr1[i]] = arr2[i]; 
+    }
+    return obj;
+};
 
 /* #objectsToTuples
  *
@@ -429,7 +452,17 @@ var arraysToObject;
  * @param {Object}
  * @return {Array}
  */
-var objectsToTuples;
+var objectsToTuples = function(obj1, obj2){
+    return Object.entries(obj1).concat(Object.entries(obj2));
+};  
+//   var arr = Object.entries(obj1);
+//   var arr1 = Object.entries(obj2);
+//   var length = arr.length;
+//     for (var i = 0; i < length; i++){
+//       arr.push(arr1[i]);
+//     }
+//     return arr;
+// };
 
 /* #mapArrayValues
  *
@@ -438,7 +471,16 @@ var objectsToTuples;
  * @param {Array}
  * @return {Object}
  */
-var mapArrayValues;
+var mapArrayValues = function(arr){
+  var obj = {};
+  // var obj = {a : b};
+  // var a = arr[i];
+  // var b = true;
+    for (var i = 0; i < arr.length; i++){
+      obj[arr[i]] = true;
+    }
+    return obj;
+};
 
 /* #mapStringCounts
  *
@@ -449,7 +491,9 @@ var mapArrayValues;
  * @param {Array}
  * @return {Object}
  */
-var mapStringCounts;
+var mapStringCounts = function(arr){
+  
+};
 
 /* #arrayToObjectNums
  *
