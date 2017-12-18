@@ -492,7 +492,18 @@ var mapArrayValues = function(arr){
  * @return {Object}
  */
 var mapStringCounts = function(arr){
-  
+  var obj = {};
+  // var obj = {a : b};
+  // var a = arr[i >= 5];
+  // var b = true;
+    for (var i = 0; i < arr.length; i++){
+      if (arr[i].length >= 5){
+         obj[arr[i]] = true;
+      }else{
+        obj[arr[i]] = false;
+    } 
+  }
+    return obj;
 };
 
 /* #arrayToObjectNums
@@ -503,7 +514,13 @@ var mapStringCounts = function(arr){
  * @param {Array}
  * @return {Object}
  */
-var arrayToObjectNums;
+var arrayToObjectNums = function(arr){
+  var obj = {};
+  for (var i = 0; i < arr.length; i++){
+    obj[arr[i]] = true;
+  }
+  return obj;
+};
 
 /* #stringToKeys
  *
@@ -529,7 +546,13 @@ var stringToKeys = function(str){
  * @param {Array}
  * @return {Object}
  */
-var charCountMap;
+var charCountMap = function(arr){
+  var obj = {};
+    for (var i = 0; i < arr.length; i++){
+      obj[arr[i]] = arr[i].length;
+    }
+    return obj;
+};
 
 /* #frequencyMap
  *
@@ -538,7 +561,18 @@ var charCountMap;
  * @param {String}
  * @return {Bool}
  */
-var frequencyMap;
+var frequencyMap = function(arr){
+  var obj = {};
+  // var obj = {a : b};
+  // var a = arr[i];
+  // var b = ++arr[i];
+    for (var i = 0; i < arr.length; i++){
+      if(!obj[arr[i]])
+          obj[arr[i]] = 0;
+        ++obj[arr[i]];
+    }
+    return obj;
+};
 
 /* #tupleConvertToObject
  *
@@ -548,7 +582,13 @@ var frequencyMap;
  * @param {String}
  * @return {Bool}
  */
-var tupleConvertToObject;
+var tupleConvertToObject = function(arr){
+  var obj = {};
+  for (var i = 0; i < arr.length; i++){
+    obj[arr[i][0]] = arr[i][1];
+  }
+    return obj;
+};
 
 
 module.exports = {
